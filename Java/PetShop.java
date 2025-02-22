@@ -37,14 +37,15 @@ public class PetShop {
             return;
         }
         System.out.println("\n=== Daftar Produk ===");
-        System.out.println("+---------------------------------------------------+");
-        System.out.println("| Nama Produk        | Kategori       | Harga       |");
-        System.out.println("+---------------------------------------------------+");
-        for (Product p : products) {
-            System.out.printf("| %-18s | %-14s | Rp %.2f |\n",
-                    p.getName(), p.getCategory(), p.getPrice());
+        System.out.println("+-----------------------------------------------------------+");
+        System.out.println("| ID  | Nama Produk        | Kategori       | Harga         |");
+        System.out.println("+-----------------------------------------------------------+");
+        for (int i = 0; i < products.size(); i++) {
+            Product p = products.get(i);
+            System.out.printf("| %-3d | %-18s | %-14s | Rp %-10.2f |\n",
+                    (i + 1), p.getName(), p.getCategory(), p.getPrice());
         }
-        System.out.println("+---------------------------------------------------+");
+        System.out.println("+-----------------------------------------------------------+");
     }
 
     public void updateProduct(String oldName, String newName, String newCategory, double newPrice) {
@@ -72,9 +73,11 @@ public class PetShop {
     }
 
     public void searchProduct(String name) {
-        for (Product p : products) {
+        for (int i = 0; i < products.size(); i++) {
+            Product p = products.get(i);
             if (p.getName().equalsIgnoreCase(name)) {
                 System.out.println("\n🔎 Detail Produk:");
+                System.out.println("ID      : " + (i + 1));
                 System.out.println("Nama    : " + p.getName());
                 System.out.println("Kategori: " + p.getCategory());
                 System.out.println("Harga   : Rp " + p.getPrice());
