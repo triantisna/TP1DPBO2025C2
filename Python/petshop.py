@@ -9,6 +9,7 @@ class Product:
     @property
     def name(self):
         return self._name
+
     @name.setter
     def name(self, new_name):
         self._name = new_name
@@ -17,6 +18,7 @@ class Product:
     @property
     def category(self):
         return self._category
+
     @category.setter
     def category(self, new_category):
         self._category = new_category
@@ -25,37 +27,35 @@ class Product:
     @property
     def price(self):
         return self._price
+
     @price.setter
     def price(self, new_price):
         self._price = new_price
 
+
 # Kelas utama PetShop untuk mengelola produk
 class PetShop:
     def __init__(self):
-        # Constructor untuk inisialisasi daftar produk
-        self.products = []
+        self.products = []  # List untuk menyimpan produk
 
     def add_product(self, name, category, price):
-        # Menambahkan produk baru ke dalam daftar
         self.products.append(Product(name, category, price))
         print("✅ Produk berhasil ditambahkan!")
 
     def display_products(self):
-        # Menampilkan daftar produk dalam bentuk tabel
         if not self.products:
             print("🚫 Tidak ada produk dalam daftar.")
             return
         
         print("\n=== Daftar Produk ===")
-        print("+-----------------------------------+")
-        print("| Nama Produk    | Kategori | Harga |")
-        print("+-----------------------------------+")
-        for p in self.products:
-            print(f"| {p.name:<14} | {p.category:<8} | Rp {p.price:.2f} |")
-        print("+-----------------------------------+")
+        print("+------------------------------------------------+")
+        print("| ID  | Nama Produk    | Kategori  | Harga       |")
+        print("+------------------------------------------------+")
+        for i, p in enumerate(self.products, start=1):
+            print(f"| {i:<3} | {p.name:<14} | {p.category:<9} | Rp {p.price:10.2f} |")
+        print("+------------------------------------------------+")
 
     def update_product(self, old_name, new_name, new_category, new_price):
-        # Memperbarui produk berdasarkan nama produk
         for p in self.products:
             if p.name.lower() == old_name.lower():
                 p.name = new_name
@@ -66,7 +66,6 @@ class PetShop:
         print("❌ Produk tidak ditemukan!")
 
     def delete_product(self, name):
-        # Menghapus produk berdasarkan nama produk
         for i, p in enumerate(self.products):
             if p.name.lower() == name.lower():
                 del self.products[i]
@@ -75,10 +74,10 @@ class PetShop:
         print("❌ Produk tidak ditemukan!")
 
     def search_product(self, name):
-        # Mencari produk berdasarkan nama
-        for p in self.products:
+        for i, p in enumerate(self.products, start=1):
             if p.name.lower() == name.lower():
                 print("\n🔎 Detail Produk:")
+                print(f"ID      : {i}")
                 print(f"Nama    : {p.name}")
                 print(f"Kategori: {p.category}")
                 print(f"Harga   : Rp {p.price:.2f}")
