@@ -20,7 +20,7 @@ Program terdiri dari beberapa class dan fungsi utama:
 
 2. Class/PetShop
 
-   - Menyimpan daftar produk dalam koleksi (ArrayList di Java, List di Python, dan Array di PHP)
+   - Menyimpan daftar produk
    - Memiliki metode untuk:
      - Menambah produk
      - Menampilkan daftar produk
