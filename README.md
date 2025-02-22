@@ -57,11 +57,11 @@ Dokumentasi CPP
 
 Dokumentasi Java
 
-![Image](https://github.com/user-attachments/assets/59e3f0d7-2509-4ba1-b77d-967331dff143)
+![Image](https://github.com/user-attachments/assets/80988dd9-95eb-44e4-87f0-65c37efdda85)
 
 Dokumentasi Python
 
-![Image](https://github.com/user-attachments/assets/3b9c2b7a-4201-437a-b9d5-b629aa49c5d3)
+![Image](https://github.com/user-attachments/assets/88967837-cefa-4e00-919d-5d8399f94835)
 
 Dokumentasi PHP
 
