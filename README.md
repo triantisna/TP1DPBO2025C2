@@ -15,6 +15,7 @@ Program terdiri dari beberapa class dan fungsi utama:
      - Nama Produk
      - Kategori
      - Harga
+     - Foto (Khusus PHP)
    - Memiliki metode untuk mendapatkan dan memperbarui data produk
 
 2. Class/PetShop
